@@ -6,7 +6,9 @@ public class PlayerMove : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator anim;
-    private float lastDirection = 1f; // 마지막 이동 방향 (처음엔 오른쪽)
+
+    private Vector2 moveInput;
+    private Vector2 lastMoveDir;
 
     void Start()
     {
@@ -16,21 +18,33 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        // 1. 방향 입력 받기
         float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+        moveInput = new Vector2(moveX, moveY).normalized;
 
-        // 실제 이동 처리
-        rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
+        // 2. 애니메이터 파라미터 업데이트
+        anim.SetFloat("MoveX", moveInput.x);
+        anim.SetFloat("MoveY", moveInput.y);
 
-        // 방향 정보 기억 (입력 있을 때만 갱신)
-        if (moveX != 0)
-        {
-            lastDirection = moveX;
-            anim.SetFloat("Direction", moveX); // 걷기 애니메이션
-        }
+        bool isMoving = moveInput != Vector2.zero;
+        anim.SetBool("IsMoving", isMoving);
+
+        // 3. 마지막 이동 방향 기억해서 Idle 방향 유지
+        if (isMoving)
+            lastMoveDir = moveInput;
         else
         {
-            // 키 안 누르면 마지막 방향 기준 Idle 애니메이션으로 유지
-            anim.SetFloat("Direction", lastDirection * 0.01f); // -0.01 또는 0.01
+            // 멈췄을 때 Blend Tree가 idle 쪽으로 가도록 마지막 방향으로 살짝 유지
+            anim.SetFloat("MoveX", lastMoveDir.x * 0.5f);
+            anim.SetFloat("MoveY", lastMoveDir.y * 0.5f);
         }
+
+    }
+
+    void FixedUpdate()
+    {
+        // 4. 물리 이동 처리
+        rb.velocity = moveInput * moveSpeed;
     }
 }
