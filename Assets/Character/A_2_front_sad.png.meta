@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 7be345e40ebee4600ae8174e76376f47
+guid: 3bb222a1b86f74b7191cfce56d495094
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2246132016280222320
-    second: subway_base_0
+      213: 4522357142275599881
+    second: A_2_front_sad_0
+  - first:
+      213: -7948826960042381374
+    second: A_2_front_sad_1
+  - first:
+      213: 1576540304010232212
+    second: A_2_front_sad_2
+  - first:
+      213: -5640762883208462284
+    second: A_2_front_sad_3
+  - first:
+      213: -6108571111348041250
+    second: A_2_front_sad_4
+  - first:
+      213: 8193899965539372109
+    second: A_2_front_sad_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -74,8 +89,8 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 2
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,89 +128,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: subway_base_0
+      name: A_2_front_sad_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 33
-        width: 343
-        height: 114
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0954cfae4d224d0e0800000000000000
-      internalID: -2246132016280222320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: subway_base_1
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 91
-        width: 343
-        height: 56
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ffb3d2a68b9f440784f8f34af934624
-      internalID: 956499301
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: subway_base_2
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 33
-        width: 343
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e75373df8a374554bcccd1428f0bd23
-      internalID: 1150566264
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: subway_base_3
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 124
-        width: 343
-        height: 23
+        x: 23
+        y: 16
+        width: 17
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3aa91aaee31fd467bbdcaef026228b88
-      internalID: 1918611300
+      spriteID: 90ea9c44cd3a2ce30800000000000000
+      internalID: 4522357142275599881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_2_front_sad_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 16
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf20a99ef710b190800000000000000
+      internalID: -7948826960042381374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_2_front_sad_2
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 16
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 491cd9abd0ff0e510800000000000000
+      internalID: 1576540304010232212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_2_front_sad_3
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 16
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 430c6243b0cf7b1b0800000000000000
+      internalID: -5640762883208462284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_2_front_sad_4
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 16
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed903e650fef93ba0800000000000000
+      internalID: -6108571111348041250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_2_front_sad_5
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 16
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4c4f030b9496b170800000000000000
+      internalID: 8193899965539372109
       vertices: []
       indices: 
       edges: []
@@ -204,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2eae505e83dde40fe931eacc65685491
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -213,11 +272,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      subway_base_0: -2246132016280222320
-      subway_base_1: 956499301
-      subway_base_2: 1150566264
-      subway_base_3: 1918611300
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
