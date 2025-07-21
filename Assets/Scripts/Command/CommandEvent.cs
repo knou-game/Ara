@@ -1,9 +1,9 @@
 using UnityEngine;
 
 [System.Serializable]
-public class DialogueEvent
+public class CommandEvent
 {
     public string name;
     public int scene;
-    public Dialogue[] dialogues;
+    public CommandBase[] commands;
 }
