@@ -26,7 +26,7 @@ public class PlayerTrashHandler : MonoBehaviour
         if (canDump && Input.GetKeyDown(KeyCode.Space))
         {
             DumpTrash();
-            Debug.Log("🗑️ 쓰레기 버렸음!");
+            // Debug.Log("🗑️ 쓰레기 버렸음!");
         }
 
         FollowTrash();
