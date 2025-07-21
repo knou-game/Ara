@@ -1,24 +1,23 @@
-using System.Data.Common;
 using UnityEngine;
 
-public class IntegrationController : MonoBehaviour
+public class IntegrationController : SingletonPersistent<CommandDatabase>
 {
     [SerializeField]
-    DialogueEvent dialogue;
+    CommandEvent command;
 
-    void Awake()
+    protected override void Awake()
     {
-        while (!LineDatabase.isFinish);
-        dialogue.dialogues = LineDatabase.instance.GetDialogue(dialogue.scene);
+        base.Awake();
     }
 
     void Start()
     {
-        ScenarioManager.Instance.ShowDialogue(dialogue.dialogues);
+        ScenarioManager.Instance.commands = CommandDatabase.Instance.GetCommands(command.scene);
+        ScenarioManager.Instance.StartScenario();
     }
 
     void Update()
     {
-        
+
     }
 }
