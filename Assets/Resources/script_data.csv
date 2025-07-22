@@ -3,7 +3,7 @@
 ,SHOW_CHAR,,,
 ,BACKGROUND,Light,0.1,
 ,DIALOGUE,Monologue,시끄러운 알람 소리와 함께 자그마한 섬광이 비친다. 아라의 핸드폰이 울린다.,
-,DIALOGUE,,핸드폰을 집어 든 뒤 끈다.,
+,DIALOGUE,Monologue,핸드폰을 집어 든 뒤 끈다.,
 ,BACKGROUND,Light,0.5,
 ,DIALOGUE,아라,(깊은 한숨을 쉬며) 하..,
 ,HIDE_CHAR,,,
@@ -14,14 +14,14 @@
 ,SHOW_CHAR,,,
 ,CHARACTER,Ara,change,depressed
 ,DIALOGUE,Monologue,아라는 다크써클과 우울이 버무러진 어두운 얼굴을 지으며 힘 없이 축 느그러진 채로 서 있다.,
-,DIALOGUE,,아라는 핸드폰을 쳐다본다. 그녀는 늘 그렇듯 핸드폰을 켠다.,
+,DIALOGUE,Monologue,아라는 핸드폰을 쳐다본다. 그녀는 늘 그렇듯 핸드폰을 켠다.,
 ,HIDE_CHAR,,,
 ,CHARACTER,Ara,change,normal
 ,CHARACTER,Ara,move,recorded
 3,SCENE,Company,,
 ,SHOW_CHAR,,,
 ,DIALOGUE,Monologue,아라는 여전히 몸이 축 처진 채로 회사에 출근한다. 그녀의 모습은 정말이지 어둡기 그지 없다. ,
-,DIALOGUE,,자리에 앉은 그녀 옆으로 그녀의 친한 회사 동료 ‘예진’ 이 그녀의 옆으로 다가온다.,
+,DIALOGUE,Monologue,자리에 앉은 그녀 옆으로 그녀의 친한 회사 동료 ‘예진’ 이 그녀의 옆으로 다가온다.,
 ,HIDE_CHAR,,,
 ,CHARACTER,Yejin,move,recorded
 ,SHOW_CHAR,,,
@@ -29,4 +29,3 @@
 ,DIALOGUE,아라,(목만 끄덕이며) …,
 ,DIALOGUE,예진,(약간 체념하듯이) 그래.. 나중에 점심 먹을 때 보자!,
 ,HIDE_CHAR,,,
-,,Monologue,예진은 낯빛이 어두워지며 뒤돌아 자신의 자리로 향한다.,

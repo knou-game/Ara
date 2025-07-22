@@ -61,6 +61,7 @@ public class CommandParser : MonoBehaviour
                 dialogueModel = new DialogueModel();
                 dialogueModel.name = row[2];
                 dialogueModel.context = row[3];
+                commandOrder.Add(dialogueModel);
             }
             else if (row[1] == "CHARACTER")
             {
@@ -68,6 +69,7 @@ public class CommandParser : MonoBehaviour
                 characterModel.name = row[2];
                 characterModel.command = row[3];
                 characterModel.argument = row[4];
+                commandOrder.Add(characterModel);
             }
             else if (row[1] == "QUEST")
             {
@@ -75,6 +77,7 @@ public class CommandParser : MonoBehaviour
                 questModel.title = row[2];
                 questModel.line = row[3];
                 questModel.questName = row[4];
+                commandOrder.Add(questModel);
             }
         }
         commandList.Add(tempCommandList);  // NOTE :: Adding last scene's dialogue.

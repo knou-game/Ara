@@ -40,11 +40,13 @@ public class ScenarioManager : SingletonPersistent<ScenarioManager>
     {
         if (trig)
         {
+            dialogueBG.enabled = true;
             dialogueBG.GetComponent<CanvasRenderer>().SetAlpha(100);
             dialogueBG.GetComponent<Graphic>().raycastTarget = true;
         }
         else
         {
+            dialogueBG.enabled = false;
             dialogueBG.GetComponent<CanvasRenderer>().SetAlpha(0);
             dialogueBG.GetComponent<Graphic>().raycastTarget = false;
             characterLine.GetComponent<CanvasRenderer>().SetAlpha(0);
@@ -184,7 +186,7 @@ public class ScenarioManager : SingletonPersistent<ScenarioManager>
                 yield return new WaitForSeconds(0.05f);
             }
         }
-        isNextBtnClicked = true;
-        yield return new WaitUntil(() => !isNextBtnClicked);
+        isNextBtnClicked = false;
+        yield return new WaitUntil(() => isNextBtnClicked);
     }
 }
