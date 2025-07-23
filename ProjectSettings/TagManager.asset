@@ -47,5 +47,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackgroundPanel
+    uniqueID: 1546547125
+    locked: 0
+  - name: UI
+    uniqueID: 1598549739
+    locked: 0
   m_RenderingLayers:
   - Default

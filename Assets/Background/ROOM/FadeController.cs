@@ -6,6 +6,13 @@ public class FadeController : MonoBehaviour
 {
     public Image fadeImage;         // FadePanel의 Image
     public float fadeDuration = 1f; // 암전 속도
+    private float currentValue = 1f;
+
+    void Start()
+    {
+        Color color = fadeImage.color;
+        fadeImage.color = new Color(color.r, color.g, color.b, 1f);
+    }
 
     // 암전
     public IEnumerator FadeOut()
@@ -33,5 +40,31 @@ public class FadeController : MonoBehaviour
             fadeImage.color = new Color(color.r, color.g, color.b, alpha);
             yield return null;
         }
+    }
+
+    public IEnumerator Fade(float rate = 1f)
+    {
+        float t = 0f;
+        float startRate;
+        float endRate;
+        if (currentValue >= rate)
+        {
+            startRate = currentValue;
+            endRate = rate;
+        }
+        else
+        {
+            startRate = rate;
+            endRate = currentValue;
+        }
+        Color color = fadeImage.color;
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            float alpha = Mathf.Lerp(startRate, endRate, t / fadeDuration);
+            fadeImage.color = new Color(color.r, color.g, color.b, alpha);
+            yield return null;
+        }
+        currentValue = rate;
     }
 }

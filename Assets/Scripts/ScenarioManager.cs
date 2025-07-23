@@ -36,6 +36,8 @@ public class ScenarioManager : SingletonPersistent<ScenarioManager>
     // variables about Dialogue 
     bool isNextBtnClicked = false;
 
+    public FadeController fadeController;
+
     public void SettingUI(bool trig)
     {
         if (trig)
@@ -60,6 +62,44 @@ public class ScenarioManager : SingletonPersistent<ScenarioManager>
         StartCoroutine(RunScenario());
     }
 
+    protected override void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    {
+        base.OnSceneLoaded(scene, mode);
+        FindUIElements();
+    }
+
+    private void FindUIElements()
+    {
+        characterName = GameObject.Find("CharacterName").GetComponent<TextMeshProUGUI>();
+        characterLine = GameObject.Find("CharacterLine").GetComponent<TextMeshProUGUI>();
+        mologue = GameObject.Find("Mologue").GetComponent<TextMeshProUGUI>();
+        dialogueBG = GameObject.Find("DialogueBG").GetComponent<Button>();
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        SettingUI(false);
+        fadeController = FindFirstObjectByType<FadeController>();
+    }
+
+    void Start()
+    {
+        FindUIElements();
+        dialogueBG.onClick.AddListener(OnDialogueBtnClicked);
+    }
+
+    void Update()
+    {
+
+    }
+
+    private void OnDialogueBtnClicked()
+    {
+        if (!isNextBtnClicked)
+            isNextBtnClicked = true;
+    }
+
     private IEnumerator RunScenario()
     {
         while (currentCommandIndex < commands.commandList.Length)
@@ -72,7 +112,7 @@ public class ScenarioManager : SingletonPersistent<ScenarioManager>
                     Debug.Log("SCENE changed");
                     break;
                 case CommandType.BACKGROUND:
-                    Debug.Log("Background change");
+                    yield return StartCoroutine(RunBackgroundChange());
                     break;
                 case CommandType.SHOW_CHAR:
                     yield return StartCoroutine(RunShowChar());
@@ -96,41 +136,14 @@ public class ScenarioManager : SingletonPersistent<ScenarioManager>
         }
     }
 
-    protected override void Awake()
+    IEnumerator RunBackgroundChange()
     {
-        base.Awake();
-        SettingUI(false);
-    }
-
-    protected override void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
-    {
-        base.OnSceneLoaded(scene, mode);
-        FindUIElements();
-    }
-
-    private void FindUIElements()
-    {
-        characterName = GameObject.Find("CharacterName").GetComponent<TextMeshProUGUI>();
-        characterLine = GameObject.Find("CharacterLine").GetComponent<TextMeshProUGUI>();
-        mologue = GameObject.Find("Mologue").GetComponent<TextMeshProUGUI>();
-        dialogueBG = GameObject.Find("DialogueBG").GetComponent<Button>();
-    }
-
-    void Start()
-    {
-        FindUIElements();
-        dialogueBG.onClick.AddListener(OnDialogueBtnClicked);
-    }
-
-    void Update()
-    {
-
-    }
-
-    private void OnDialogueBtnClicked()
-    {
-        if (!isNextBtnClicked)
-            isNextBtnClicked = true;
+        BackgroundModel currentBackground = (BackgroundModel)currentCommand;
+        if (currentBackground.command == "Light")
+        {
+            yield return StartCoroutine(fadeController.Fade(1f-float.Parse(currentBackground.argument)));
+        }
+        yield return null;
     }
 
     IEnumerator RunShowChar()

@@ -2639,6 +2639,7 @@ MonoBehaviour:
   mologue: {fileID: 1789951073}
   dialogueBG: {fileID: 201986018}
   currentCommandIndex: 0
+  fadeController: {fileID: 0}
 --- !u!114 &275813193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3232,7 +3233,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000b56f2e5cebee475f
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -3668,7 +3669,7 @@ Transform:
   m_GameObject: {fileID: 520520140}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -5.29, y: -0.23, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7806,7 +7807,7 @@ Transform:
   m_GameObject: {fileID: 1165461411}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -5.29, y: -0.23, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8101,9 +8102,9 @@ Canvas:
   m_GameObject: {fileID: 1218864526}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 1165461414}
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -8112,7 +8113,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1546547125
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1218864530
@@ -11342,8 +11343,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 1000
+  m_SortingLayerID: 1598549739
+  m_SortingOrder: 984
   m_TargetDisplay: 0
 --- !u!224 &1709414223
 RectTransform:
@@ -14971,11 +14972,11 @@ PrefabInstance:
       objectReference: {fileID: -997949817019976210, guid: 1e19dd7b2414b467db460c11da82e24a, type: 3}
     - target: {fileID: 2421676280166190832, guid: eaf38cea6c8cc43359975d98e6b01f6b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.29
       objectReference: {fileID: 0}
     - target: {fileID: 2421676280166190832, guid: eaf38cea6c8cc43359975d98e6b01f6b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: 2421676280166190832, guid: eaf38cea6c8cc43359975d98e6b01f6b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15035,6 +15036,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1709414223}
   - {fileID: 1218864530}
   - {fileID: 1165461415}
   - {fileID: 520520143}
@@ -15048,4 +15050,3 @@ SceneRoots:
   - {fileID: 419852821}
   - {fileID: 365525105}
   - {fileID: 477799359}
-  - {fileID: 1709414223}

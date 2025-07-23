@@ -1,7 +1,7 @@
 ﻿Scene,Command,Arg1,Arg2,Arg3
 1,SCENE,Ara's room,,
-,SHOW_CHAR,,,
 ,BACKGROUND,Light,0.1,
+,SHOW_CHAR,,,
 ,DIALOGUE,Monologue,시끄러운 알람 소리와 함께 자그마한 섬광이 비친다. 아라의 핸드폰이 울린다.,
 ,DIALOGUE,Monologue,핸드폰을 집어 든 뒤 끈다.,
 ,BACKGROUND,Light,0.5,
