@@ -1,17 +1,13 @@
 using UnityEngine;
 
-public class IntegrationController : SingletonPersistent<CommandDatabase>
+public class IntegrationController : MonoBehaviour
 {
     [SerializeField]
     CommandEvent command;
 
-    protected override void Awake()
-    {
-        base.Awake();
-    }
-
     void Start()
     {
+        Debug.Log("Why");
         ScenarioManager.Instance.commands = CommandDatabase.Instance.GetCommands(command.scene);
         ScenarioManager.Instance.StartScenario();
     }

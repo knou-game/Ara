@@ -45,23 +45,11 @@ public class FadeController : MonoBehaviour
     public IEnumerator Fade(float rate = 1f)
     {
         float t = 0f;
-        float startRate;
-        float endRate;
-        if (currentValue >= rate)
-        {
-            startRate = currentValue;
-            endRate = rate;
-        }
-        else
-        {
-            startRate = rate;
-            endRate = currentValue;
-        }
         Color color = fadeImage.color;
         while (t < fadeDuration)
         {
             t += Time.deltaTime;
-            float alpha = Mathf.Lerp(startRate, endRate, t / fadeDuration);
+            float alpha = Mathf.Lerp(currentValue, rate, t / fadeDuration);
             fadeImage.color = new Color(color.r, color.g, color.b, alpha);
             yield return null;
         }

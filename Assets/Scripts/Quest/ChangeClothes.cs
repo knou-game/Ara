@@ -1,6 +1,7 @@
+using System.Collections;
 using UnityEngine;
 
-public class ChangingZoneTrigger : MonoBehaviour
+public class ChangeClothes : QuestBase
 {
     public Animator playerAnimator;                         // 플레이어의 Animator
     public RuntimeAnimatorController originalOutfit;        // 원래 옷
@@ -29,22 +30,18 @@ public class ChangingZoneTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (playerInZone && Input.GetKeyDown(KeyCode.Space))
-        {
-            // ✅ 방 청소가 끝나지 않으면 옷 못 갈아입음
-            if (!RoomCleanupManager.isRoomCleaned)
-            {
-                Debug.Log("🧼 방을 다 치운 후에 옷을 갈아입을 수 있어요!");
-                return;
-            }
 
-            StartCoroutine(ChangeOutfitRoutine());
-        }
     }
 
-    private System.Collections.IEnumerator ChangeOutfitRoutine()
+    public override IEnumerator WaitQuestTrigger()
     {
-        yield return fadeController.FadeOut(); // 암전
+        yield return new WaitUntil(() => playerInZone && Input.GetKeyDown(KeyCode.Space));
+        yield return StartCoroutine(ChangeOutfitRoutine());
+    }
+
+    private IEnumerator ChangeOutfitRoutine()
+    {
+        yield return fadeController.Fade(1f); // 암전
 
         // 🔊 효과음 재생
         if (changeClothesSound != null)
@@ -69,7 +66,7 @@ public class ChangingZoneTrigger : MonoBehaviour
 
         isWearingNewOutfit = !isWearingNewOutfit;
 
-        yield return new WaitForSeconds(0.2f);
-        yield return fadeController.FadeIn(); // 밝아짐
+        // yield return new WaitForSeconds(0.2f);
+        yield return fadeController.Fade(0.5f); // 밝아짐
     }
 }
