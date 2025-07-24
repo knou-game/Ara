@@ -15,18 +15,39 @@ public class PlayerTrashHandler : MonoBehaviour
 
     public Transform trashCanTargetPoint; // 쓰레기통 안쪽 목표 위치
 
+    // 🔊 효과음 변수
+    public AudioClip pickupSound;
+    public AudioClip collectModeSound;
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        // AudioSource 컴포넌트 가져오기 또는 추가
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
+    }
+
     void Update()
     {
-        if (isInTrashArea && Input.GetKeyDown(KeyCode.Space))
+        if (isInTrashArea && Input.GetKeyDown(KeyCode.Space) && !canCollectTrash)
         {
             canCollectTrash = true;
             Debug.Log("✅ 쓰레기 줍기 모드 활성화됨!");
+
+            // 🔊 쓰레기 줍기 모드 효과음
+            if (collectModeSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(collectModeSound);
+            }
         }
 
         if (canDump && Input.GetKeyDown(KeyCode.Space))
         {
             DumpTrash();
-            // Debug.Log("🗑️ 쓰레기 버렸음!");
         }
 
         FollowTrash();
@@ -58,6 +79,12 @@ public class PlayerTrashHandler : MonoBehaviour
             {
                 collectedTrash.Add(other.transform);
                 other.GetComponent<Collider2D>().enabled = false;
+
+                // 🔊 쓰레기 줍는 효과음
+                if (pickupSound != null && audioSource != null)
+                {
+                    audioSource.PlayOneShot(pickupSound);
+                }
             }
         }
     }
