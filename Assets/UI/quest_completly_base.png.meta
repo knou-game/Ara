@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b19971c824a7d4f83965d3360c7366f3
+guid: 98ab7508d4a8d64418dafda98b476fbc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2712918006127473988
-    second: Worn-Parchment-BG-1_0
+      213: 1265854750922386938
+    second: quest_completly_base_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Worn-Parchment-BG-1_0
+      name: quest_completly_base_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
-        width: 465
-        height: 272
+        x: 3
+        y: 3
+        width: 1753
+        height: 763
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cbac2047277c95ad0800000000000000
-      internalID: -2712918006127473988
+      spriteID: afd28fd6038319110800000000000000
+      internalID: 1265854750922386938
       vertices: []
       indices: 
       edges: []
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Worn-Parchment-BG-1_0: -2712918006127473988
+      quest_completly_base_0: 1265854750922386938
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -26,10 +26,12 @@ public class SingletonPersistent<T> : MonoBehaviour where T : MonoBehaviour
         if (_instance == null)
         {
             _instance = this as T;
+            Debug.Log(typeof(T).ToString() + " Singleton instance created.");
             DontDestroyOnLoad(this.gameObject);
         }
         else if (_instance != this)
         {
+            Debug.LogWarning(typeof(T).ToString() + " Singleton instance already exists. Destroying this new instance.");
             Destroy(this.gameObject);
         }
     }
